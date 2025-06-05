@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { AiFillTruck } from "react-icons/ai";
 import { CiLocationOn } from "react-icons/ci";
 import { RiDeleteBin6Line } from "react-icons/ri";
@@ -7,6 +7,7 @@ import { SlCalender } from "react-icons/sl";
 import { LuWalletCards } from "react-icons/lu";
 
 export default function NavLinks() {
+  const location = useLocation();
   const navigationLinks = [
     { name: "Select Skip", path: "/select-skip", icon: <AiFillTruck /> },
     {
@@ -30,21 +31,28 @@ export default function NavLinks() {
 
   return (
     <div className="flex justify-between mt-5 mx-5">
-      {navigationLinks.map((item, index) => (
-        <Link
-          key={index}
-          to={item.path}
-          className={`flex items-center justify-center gap-3 px-6 py-2  cursor-pointer no-underline
-             ${
-               // location.pathname === item.path ? "bg-[#4285F4]" : "bg-transparent"
-               ""
-             }
+      {navigationLinks.map((item, index) => {
+        const isActive = location.pathname === item.path;
+        return (
+          <Link
+            key={index}
+            to={item.path}
+            className={`flex items-center justify-center gap-3 px-6 py-2  cursor-pointer no-underline
+            ${isActive ? "border text-white" : "bg-transparent"}
+              ${
+                index >= 2 ? "hidden sm:flex" : "" // show first 2 always, rest on sm+
+              }
+           ${
+             index >= 3 ? "hidden md:flex" : "" // show first 4 on md+
+           }
+        
           `}
-        >
-          <div className="text-blue-600 text-2xl ">{item.icon}</div>
-          <h3 className="text-white text-base">{item.name}</h3>
-        </Link>
-      ))}
+          >
+            <div className="text-blue-600 text-2xl ">{item.icon}</div>
+            <h3 className="text-white text-base">{item.name}</h3>
+          </Link>
+        );
+      })}
     </div>
   );
 }

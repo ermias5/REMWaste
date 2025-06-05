@@ -1,7 +1,7 @@
 export default function PermitCheck() {
   return (
-    <>
-      <h1>This is permit check page</h1>
-    </>
+    <div className="flex justify-center h-screen">
+      <h2 className="text-2xl font-bold">This is permit check page</h2>
+    </div>
   );
 }

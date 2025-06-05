@@ -1,7 +1,7 @@
 export default function WastType() {
   return (
-    <>
-      <h1>This is wast type page</h1>
-    </>
+    <div className="flex justify-center h-screen">
+      <h2 className="text-2xl font-bold">This is wast type page</h2>
+    </div>
   );
 }

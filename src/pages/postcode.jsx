@@ -1,7 +1,7 @@
 export default function Postcode() {
   return (
-    <>
-      <h1>This is postcode page</h1>
-    </>
+    <div className="flex justify-center h-screen">
+      <h2 className="text-2xl font-bold">This is postcode page</h2>
+    </div>
   );
 }
