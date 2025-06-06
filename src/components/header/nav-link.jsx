@@ -9,7 +9,7 @@ import { LuWalletCards } from "react-icons/lu";
 export default function NavLinks() {
   const location = useLocation();
   const navigationLinks = [
-    { name: "Select Skip", path: "/select-skip", icon: <AiFillTruck /> },
+    { name: "Select Skip", path: "/", icon: <AiFillTruck /> },
     {
       name: "Postcode",
       path: "/postcode",
@@ -39,12 +39,8 @@ export default function NavLinks() {
             to={item.path}
             className={`flex items-center justify-center gap-3 px-6 py-2  cursor-pointer no-underline
             ${isActive ? "border text-white" : "bg-transparent"}
-              ${
-                index >= 2 ? "hidden sm:flex" : "" // show first 2 always, rest on sm+
-              }
-           ${
-             index >= 3 ? "hidden md:flex" : "" // show first 4 on md+
-           }
+              ${index >= 2 ? "hidden sm:flex" : ""}
+           ${index >= 3 ? "hidden md:flex" : ""}
         
           `}
           >

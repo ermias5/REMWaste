@@ -10,7 +10,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <RootLayout />,
     children: [
-      { path: "/select-skip", element: <SelectSkip /> },
+      { path: "/", element: <SelectSkip /> },
       { path: "/postcode", element: <Postcode /> },
       { path: "/permit-check", element: <PermitCheck /> },
       { path: "/wast-type", element: <WastType /> },
