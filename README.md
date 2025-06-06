@@ -5,3 +5,5 @@ This is fully functional maintainable and attain clean code structre principles
 this application dedveloped for dark mode browser
 
 mobile and laptop responsive
+
+for starting the server write and run: npm run dev 
